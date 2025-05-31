@@ -22,7 +22,7 @@ El proyecto está desarrollado en **Nest.js**, y usa:
 ### 1. Clona el repositorio
 
 ```bash
-git clone <URL-DEL-REPOSITORIO>
+git clone <URL-DEL-REPOSITORIO> 
 cd <nombre-del-proyecto>
 ```
 
