@@ -85,9 +85,9 @@ Selecciona el tipo **none** (sin body).
 
 Esto disparará el flujo completo: petición a Jumpseller, almacenamiento en base de datos y envío de productos a Multivende.
 
-> ❓ **Importante:** Asegúrate de que en Jumpseller existan productos **nuevos creados en las últimas 24 horas** y que tengan **al menos 1 unidad de stock**. Si no hay productos que cumplan estas condiciones, no se procesará nada.
+> ❓ **Importante:** Asegúrate de que en Jumpseller existan productos **nuevos creados en las últimas 24 horas** y que tengan **al menos 1 unidad de stock** y que cuenten con SKU. Si no hay productos que cumplan estas condiciones, no se procesará nada.
 >
-> Para propósitos de prueba, puedes crear productos manualmente desde Jumpseller con stock para verificar que el flujo funcione correctamente.
+> Para propósitos de prueba, puedes crear productos manualmente desde Jumpseller con stock y SKU para verificar que el flujo funcione correctamente.
 
 ---
 
