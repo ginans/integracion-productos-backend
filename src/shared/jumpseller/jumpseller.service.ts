@@ -1,6 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { JumpsellerSettingsService } from './jumpsellerSettings.service';
 import axios from 'axios';
+import { IRetrieveAllProductsResponse } from './interface/retrieve-all-products.interface';
 
 @Injectable()
 export class JumpsellerService {
@@ -10,7 +11,7 @@ export class JumpsellerService {
     private readonly jumpsellerSettingsService: JumpsellerSettingsService
   ) {}
 
-    async getRecentProducts() {
+    async getRecentProducts(): Promise<IRetrieveAllProductsResponse[]> {
       const authToken = await this.jumpsellerSettingsService.getBasicAuthToken()
       let productosRecientes = [];
       const ahora = new Date();

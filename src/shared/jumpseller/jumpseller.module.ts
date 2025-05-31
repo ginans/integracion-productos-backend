@@ -7,5 +7,6 @@ import { JumpsellerSettingsService } from './jumpsellerSettings.service';
   controllers: [],
   providers: [JumpsellerService, JumpsellerSettingsService],
   imports: [],
+  exports: [JumpsellerService, JumpsellerSettingsService]
 })
 export class JumpsellerModule {}

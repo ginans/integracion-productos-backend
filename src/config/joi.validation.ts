@@ -9,4 +9,5 @@ export const JoiValidationSchema = Joi.object({
   PORT: Joi.number().default(8000),
   APP_NAME: Joi.string().default('Project Name'),
   URL_APP: Joi.string().default('http://localhost:3000'),
+  CACHE_URL: Joi.string().default('redis://localhost:6379'),
 });

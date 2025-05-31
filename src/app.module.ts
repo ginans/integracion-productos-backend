@@ -16,6 +16,10 @@ import { LoggerModule } from './common/logger/logger.module';
 import { SettingsModule } from './shared/multivende/settings/settings.module';
 import { JobsModule } from './jobs/jobs.module';
 import { ProductsModule } from './products/products.module';
+import { BullModule } from '@nestjs/bullmq';
+import { BullBoardModule } from '@bull-board/nestjs';
+import { ExpressAdapter } from '@bull-board/express';
+import { ProcessModule } from './process/process.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -26,6 +30,15 @@ import { ProductsModule } from './products/products.module';
     MongooseModule.forRoot(EnvConfiguration().db_uri, {
       dbName: EnvConfiguration().db_name,
     }),
+    BullModule.forRoot({
+      connection: {
+        url: EnvConfiguration().cache_url,
+      },
+    }),
+    BullBoardModule.forRoot({
+      route: '/admin/queues',
+      adapter: ExpressAdapter,
+    }),
     ScheduleModule.forRoot(),
     UsersModule,
     AuthModule,
@@ -33,6 +46,7 @@ import { ProductsModule } from './products/products.module';
     SettingsModule,
     JobsModule,
     ProductsModule,
+    ProcessModule
   ],
   controllers: [AppController],
   providers: [
