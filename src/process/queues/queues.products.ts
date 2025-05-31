@@ -6,6 +6,7 @@ import { JumpsellerService } from 'src/shared/jumpseller/jumpseller.service';
 import { MultivendeModule } from 'src/shared/multivende/multivende.module';
 import { MultivendeService } from 'src/shared/multivende/multivende.service';
 import { mappedDataToMultivende } from '../multivende.mapper/multivende.mapper';
+import { CreateProductResponse } from 'src/shared/multivende/interfaces/create-product-response';
 
 @Processor('queues-products')
 export class QueuesProduct extends WorkerHost {
@@ -23,14 +24,10 @@ export class QueuesProduct extends WorkerHost {
       await job.updateProgress(25);
       await this.productsService.saveProducts(job.data);
       await job.updateProgress(50);
-      //meter los productos en multivende
-
       const mappedProduct = mappedDataToMultivende(job.data) as any;
       const multiventeRes = await this.multivendeService.createProducts(mappedProduct);
-
-      //guardar
-      console.log('Multivende response:', multiventeRes);
-
+      await job.updateProgress(75);
+      await this.productsService.saveMultivendeResponse(multiventeRes as CreateProductResponse);
       await job.updateProgress(100);
       return 'done';
     } catch (error) {
