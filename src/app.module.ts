@@ -15,7 +15,7 @@ import { LoggerService } from './common/logger/logger.service';
 import { LoggerModule } from './common/logger/logger.module';
 import { SettingsModule } from './shared/multivende/settings/settings.module';
 import { JobsModule } from './jobs/jobs.module';
-import { ShopifyModule } from './shared/shopify/shopify.module';
+import { ProductsModule } from './products/products.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -32,7 +32,7 @@ import { ShopifyModule } from './shared/shopify/shopify.module';
     LoggerModule,
     SettingsModule,
     JobsModule,
-    ShopifyModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [
