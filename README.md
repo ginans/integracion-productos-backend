@@ -108,7 +108,8 @@ Esto disparará el flujo completo: petición a Jumpseller, almacenamiento en bas
 
 ## 🐤 Sobre la demo:
 
-Por motivos de tiempo, no alcancé a grabar la demo del sistema.Sin embargo, estoy completamente disponible para realizarla en vivo o enviarla grabada si así lo requieren 
+Por motivos de tiempo, no alcancé a grabar la demo del sistema. 
+Sin embargo, estoy completamente disponible para realizarla en vivo o enviarla grabada si así lo requieren 
 
 ## 📌 Notas Finales
 Este proyecto está en constante mejora. ¡Se agradecen sugerencias, issues y pull requests!
