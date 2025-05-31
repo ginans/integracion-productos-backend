@@ -30,7 +30,7 @@ export class Product implements IProduct {
   @Prop()
   days_to_expire: number;
 
-  @Prop({required: true})
+  @Prop({ required: true })
   price: number;
 
   @Prop()
@@ -112,6 +112,9 @@ export class Product implements IProduct {
 
   @Prop({ default: 'PENDING' })
   state: string;
+
+  @Prop({default: null})
+  multivendeNumber: string;
 }
 
 export type productDocument = HydratedDocument<Product>;
