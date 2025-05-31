@@ -13,9 +13,12 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
 import { RequestLoggerInterceptor } from './common/interceptor/request-logger.interceptor';
 import { LoggerService } from './common/logger/logger.service';
 import { LoggerModule } from './common/logger/logger.module';
-import { SettingsModule } from './shared/multivende/settings/settings.module';
 import { JobsModule } from './jobs/jobs.module';
-import { ShopifyModule } from './shared/shopify/shopify.module';
+import { ProductsModule } from './products/products.module';
+import { BullModule } from '@nestjs/bullmq';
+import { BullBoardModule } from '@bull-board/nestjs';
+import { ExpressAdapter } from '@bull-board/express';
+import { ProcessModule } from './process/process.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -26,13 +29,22 @@ import { ShopifyModule } from './shared/shopify/shopify.module';
     MongooseModule.forRoot(EnvConfiguration().db_uri, {
       dbName: EnvConfiguration().db_name,
     }),
+    BullModule.forRoot({
+      connection: {
+        url: EnvConfiguration().cache_url,
+      },
+    }),
+    BullBoardModule.forRoot({
+      route: '/admin/queues',
+      adapter: ExpressAdapter,
+    }),
     ScheduleModule.forRoot(),
     UsersModule,
     AuthModule,
     LoggerModule,
-    SettingsModule,
     JobsModule,
-    ShopifyModule,
+    ProductsModule,
+    ProcessModule
   ],
   controllers: [AppController],
   providers: [
