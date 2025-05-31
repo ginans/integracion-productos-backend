@@ -13,7 +13,8 @@ import { JumpsellerModule } from 'src/shared/jumpseller/jumpseller.module';
     JumpsellerModule
   ],
   exports: [
-    ProductsService
+    ProductsService,
+    MongooseModule
   ]
 })
 export class ProductsModule {}

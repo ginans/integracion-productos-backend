@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument, Types } from 'mongoose';
+import { EnumState } from 'src/common/enums/enums';
 import {
   Category,
   Image,
@@ -110,8 +111,8 @@ export class Product implements IProduct {
   @Prop({ type: [{ type: Object }] })
   variants: Variant[];
 
-  @Prop({ default: 'PENDING' })
-  state: string;
+  @Prop({ default: EnumState.PENDING })
+  state: EnumState;
 
   @Prop({default: null})
   multivendeNumber: string;

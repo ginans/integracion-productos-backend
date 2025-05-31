@@ -7,6 +7,7 @@ import { MultivendeModule } from 'src/shared/multivende/multivende.module';
 import { MultivendeService } from 'src/shared/multivende/multivende.service';
 import { mappedDataToMultivende } from '../multivende.mapper/multivende.mapper';
 import { CreateProductResponse } from 'src/shared/multivende/interfaces/create-product-response';
+import { EnumState } from 'src/common/enums/enums';
 
 @Processor('queues-products')
 export class QueuesProduct extends WorkerHost {

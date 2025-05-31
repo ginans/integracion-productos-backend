@@ -5,11 +5,14 @@ import {
   MultivendeToken,
   MultivendeTokenSchema,
 } from './entities/multivende-token.entity';
+import { Product } from 'src/products/entities/product.entity';
+import { ProductsModule } from 'src/products/products.module';
 
 @Module({
   controllers: [],
   providers: [MultivendeService],
   imports: [
+    ProductsModule,
     MongooseModule.forFeature([
       { name: MultivendeToken.name, schema: MultivendeTokenSchema },
     ]),

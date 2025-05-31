@@ -34,7 +34,7 @@ export class JumpsellerService {
           masProductos = false;
           break;
         }
-        
+        //filtro por productos creados en las últimas 24 horas y con stock disponible
         const recientes = data.filter(
           (p) =>
             new Date(p.product.created_at) >= hace24Horas &&

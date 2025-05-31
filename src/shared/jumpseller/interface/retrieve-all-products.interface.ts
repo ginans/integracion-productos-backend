@@ -1,3 +1,5 @@
+import { EnumState } from "src/common/enums/enums";
+
 export interface IRetrieveAllProductsResponse {
     product: IProduct;
 }
@@ -36,6 +38,7 @@ export interface IProduct {
     categories: Category[];
     images?: Image[];
     variants: Variant[];
+    state: EnumState;
 }
 
 export interface Category {

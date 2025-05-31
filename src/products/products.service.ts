@@ -67,10 +67,9 @@ export class ProductsService {
       );
       const result = await this.productModel.findOneAndUpdate(
         { sku: multivendeResponse.model },
-        { multivendeNumber: multivendeResponse._id, 
-          state: "COMPLETED" 
-        }
+        { multivendeNumber: multivendeResponse._id, state: "COMPLETED" }
       );
+
       return result;
     } catch (error) {
       this.logger.error(
