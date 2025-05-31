@@ -6,5 +6,5 @@ export enum SortOrder {
 export enum EnumState {
     PENDING = 'PENDING',
     COMPLETED = 'COMPLETED',
-    FAILED = 'FAILED',
+    FAILED = 'FAILED',//considerar a futuro
 }

@@ -28,15 +28,6 @@ export class MultivendeService {
   }
 
   async createProducts(product: IProduct): Promise<CreateProductInterface> {
-    //filtrar por estado PENDING o FAILED
-    if (!product || !product.sku) {
-     //obtener los fallidos 
-     await this.productModel.findOneAndUpdate
-    }
-    if (product.state !== EnumState.PENDING && product.state !== EnumState.FAILED) {
-      this.logger.warn(`El producto ${product.sku} no esta en estado pendiente o fallido, saltando...`);
-      return null;
-    }
     try{
       const token = await this.getToken();
       const { data } = await axios.post(
