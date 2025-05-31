@@ -22,23 +22,32 @@ export class JumpsellerService {
       let masProductos = true;
 
       while (masProductos) {
-        const { data } = await axios.get('https://api.jumpseller.com/v1/products.json', {
-          headers: { Authorization: `Basic ${authToken}` },
-          params: { page, limit }
-        });
-      
+        const { data } = await axios.get(
+          'https://api.jumpseller.com/v1/products.json',
+          {
+            headers: { Authorization: `Basic ${authToken}` },
+            params: { page, limit },
+          },
+        );
+
         if (data.length === 0) {
           masProductos = false;
           break;
         }
-      
-        const recientes = data.filter(p => new Date(p.product.created_at) >= hace24Horas);
+        
+        const recientes = data.filter(
+          (p) =>
+            new Date(p.product.created_at) >= hace24Horas &&
+            p.product.stock > 0,
+        );
         productosRecientes.push(...recientes);
-      
+
         page++;
-      this.logger.log(`Productos creados en las últimas 24 horas 🙂‍↕️: ${productosRecientes.length}`);
-      
-      return productosRecientes;
-    }
+        this.logger.log(
+          `Productos creados en las últimas 24 horas 🙂‍↕️: ${productosRecientes.length}`,
+        );
+
+        return productosRecientes;
+      }
   }
 }

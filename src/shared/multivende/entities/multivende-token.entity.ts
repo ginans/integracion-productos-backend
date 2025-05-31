@@ -3,21 +3,15 @@ import { HydratedDocument } from 'mongoose';
 
 @Schema({ timestamps: true })
 export class MultivendeToken {
-  //codigo multivende
-  @Prop({ required: true })
-  code: string;
-
   //accesstoken multivende
   @Prop({ required: true })
   accessToken: string;
 
-  //refreshToken multivende
   @Prop({ required: true })
-  refreshToken: string;
+  urlMultivende: string;
 
-  //refreshToken multivende
   @Prop({ required: true })
-  refreshTokenExpiresAt: Date;
+  merchantId: string;
 }
 
 export type MultivendeTokenDocument = HydratedDocument<MultivendeToken>;

@@ -6,11 +6,14 @@ import { BullMQAdapter } from '@bull-board/api/bullMQAdapter';
 import { ProcessController } from './process.controller';
 import { QueuesProduct } from './queues/queues.products';
 import { ProductsModule } from 'src/products/products.module';
+import { JumpsellerModule } from 'src/shared/jumpseller/jumpseller.module';
+import { MultivendeModule } from 'src/shared/multivende/multivende.module';
 
 
 @Module({
   imports: [
     ProductsModule,
+    MultivendeModule,
     BullModule.registerQueue({
       name: 'queues-products',
       defaultJobOptions: {

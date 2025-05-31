@@ -13,7 +13,6 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
 import { RequestLoggerInterceptor } from './common/interceptor/request-logger.interceptor';
 import { LoggerService } from './common/logger/logger.service';
 import { LoggerModule } from './common/logger/logger.module';
-import { SettingsModule } from './shared/multivende/settings/settings.module';
 import { JobsModule } from './jobs/jobs.module';
 import { ProductsModule } from './products/products.module';
 import { BullModule } from '@nestjs/bullmq';
@@ -43,7 +42,6 @@ import { ProcessModule } from './process/process.module';
     UsersModule,
     AuthModule,
     LoggerModule,
-    SettingsModule,
     JobsModule,
     ProductsModule,
     ProcessModule
