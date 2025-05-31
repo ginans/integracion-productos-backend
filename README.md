@@ -91,8 +91,21 @@ Esto disparará el flujo completo: petición a Jumpseller, almacenamiento en bas
 
 ---
 
-## 📌 Notas Finales
+## 📸 Capturas de Ejemplo
 
+**Producto en la base de datos:**
+
+![Producto en BD](/public/1productoBD.png)
+
+**Producto en Multivende:**
+
+![Producto en Multivende](/public/2producto-mv.png)
+
+**Posman**
+
+![Postman](/public/postman.png)
+
+## 📌 Notas Finales
 Este proyecto está en constante mejora. ¡Se agradecen sugerencias, issues y pull requests!
 
 ---
