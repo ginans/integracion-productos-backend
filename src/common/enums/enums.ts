@@ -3,11 +3,8 @@ export enum SortOrder {
     DESC = 'desc'
 }
 
-
 export enum EnumState {
-    PENDING = 'Pendiente',
-    PARCIAL = 'Parcial',
-    REGISTERED = 'Registrado',
-    COMPLETED = 'Completado',
-    FAILED = 'Fallido',
+    PENDING = 'PENDING',
+    COMPLETED = 'COMPLETED',
+    FAILED = 'FAILED',
 }
